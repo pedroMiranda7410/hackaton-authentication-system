@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="mt-5">
+          <h1 class="text-center">Login</h1>
+          <%= form_with url: "/session/create", method: :post do |form| %>
+            <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+            <% flash.each do |type, msg| %>
+                <div class="alert alert-<%= type == 'notice' ? 'success' : 'danger' %>">
+                    <%= msg %>
+                </div>
+            <% end %>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+
+            <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                Ainda não possui uma conta? 
+                <a href="/accounts/new" style="color: #393f81;">Cadastre aqui</a>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
