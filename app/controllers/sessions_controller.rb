@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session_expiration_time = 5.seconds
+    session_expiration_time = 60.seconds
     user = User.find_by_email(params[:email])
 
     if user && user.authenticate(params[:password])

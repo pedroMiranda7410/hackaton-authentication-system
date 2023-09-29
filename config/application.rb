@@ -11,7 +11,7 @@ module AuthenticationApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    # Rails.application.config.session_store :cookie_store, key: '_authentication_app_session', expire_after: 15.seconds
+    # Rails.application.config.session_store :cookie_store, key: '_authentication_app_session', expire_after: 60.seconds
 
     # Configuration for the application, engines, and railties goes here.
     #
