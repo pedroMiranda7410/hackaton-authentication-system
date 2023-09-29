@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       session[:expires_at] = (Time.now + session_expiration_time).to_i
-      redirect_to root_path, notice: 'Logado com sucesso.'
+      redirect_to root_path, headers: { 'Turbo-Frame' => 'false' }, notice: 'Logado com sucesso.'
     else
       redirect_to login_path, alert: 'Email ou senha incorretos'
     end
