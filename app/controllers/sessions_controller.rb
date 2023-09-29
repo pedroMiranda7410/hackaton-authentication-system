@@ -12,8 +12,7 @@ class SessionsController < ApplicationController
       session[:expires_at] = (Time.now + session_expiration_time).to_i
       redirect_to root_path, notice: 'Logado com sucesso.'
     else
-      flash.now[:alert] = 'Nome de usuário ou senha incorretos.'
-      render :new
+      redirect_to login_path, alert: 'Email ou senha incorretos'
     end
   end
 

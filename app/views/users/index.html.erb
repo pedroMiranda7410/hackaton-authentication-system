@@ -1,8 +1,14 @@
 <div class="container p-3">
+    <% flash.each do |type, msg| %>
+        <div class="alert alert-<%= type == 'notice' ? 'success' : 'danger' %>">
+            <%= msg %>
+        </div>
+    <% end %>
+
     <h1>Olá, <%= current_user.username %></h1>
     <h5>Você na página inicial</h5>
     
-    <p>
-        A sessão irá expirar em: <div class="expiration-time" data-session="60">60</div>
-    </p>
+    <!-- <p>
+        A sessão irá expirar em: <div id="expiration-time" data-session="60">60</div>
+    </p> -->
 </div>

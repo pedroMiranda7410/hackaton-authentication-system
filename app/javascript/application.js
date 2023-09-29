@@ -4,23 +4,21 @@ import "@hotwired/turbo-rails"
 import 'bootstrap'
 import $ from "jquery"
 
-$(document).ready(function() {
-    const divContador = $('#expiration-time');
-    console.log($('#expiration-time'));
-    console.log($('#expiration-time').text());
-    let contador = parseInt($('#expiration-time').text());
+// document.addEventListener("DOMContentLoaded", function() {
+//     const divContador = document.getElementById("expiration-time");
+//     let contador = parseInt(divContador.dataset.session);
 
-    console.log('contador', contador);
-    function atualizarContador() {
-        contador--;
-        divContador.textContent = contador;
+//     console.log('contador', contador);
+//     function atualizarContador() {
+//         contador--;
+//         divContador.textContent = contador;
 
-        if (contador <= 0) {
-            clearInterval(intervalo);
-            window.location.href = "/login";
-        }
-    }
+//         if (contador <= 0) {
+//             clearInterval(intervalo);
+//             window.location.href = "/login";
+//         }
+//     }
 
-    // Atualiza o contador a cada segundo (1000 milissegundos)
-    const intervalo = setInterval(atualizarContador, 1000);
-});
+//     // Atualiza o contador a cada segundo (1000 milissegundos)
+//     const intervalo = setInterval(atualizarContador, 1000);
+// });
