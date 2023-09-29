@@ -9,8 +9,7 @@ class ApplicationController < ActionController::Base
       unless @time_left > 0
         session[:user_id] = nil
         session[:expires_at] = nil
-        flash[:error] = 'Faça o login novamente'
-        redirect_to login_path
+        redirect_to login_path, alert: 'Sessão expirada, faça login novamente'
       end
     end
 
